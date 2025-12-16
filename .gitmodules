@@ -1,0 +1,3 @@
+[submodule "electrod"]
+	path = electrod
+	url = https://github.com/hpacheco/electrod.git
