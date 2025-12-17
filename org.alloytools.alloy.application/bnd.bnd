@@ -1,0 +1,18 @@
+-includeresource: \
+	src/main/resources
+
+-buildpath: \
+	lib/apple-osx-ui.jar;version=file,\
+	org.alloytools.alloy.core;version=latest,\
+	aQute.libg,\
+	org.alloytools.api,\
+	org.alloytools.pardinus.core
+-testpath: \
+	biz.aQute.wrapper.junit, \
+	biz.aQute.wrapper.hamcrest, \
+    org.sat4j.core, \
+
+Private-Package: \
+	edu.mit.csail.sdg.alloy4graph,\
+	edu.mit.csail.sdg.alloy4viz,\
+	edu.mit.csail.sdg.alloy4whole,\

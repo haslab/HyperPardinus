@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="aQute.bnd.classpath.container"/>
+	<classpathentry kind="lib" path="/Users/nmm/.m2/repository/org/sat4j/org.sat4j.maxsat/2.3.1/org.sat4j.maxsat-2.3.1.jar"/>
+	<classpathentry kind="lib" path="/Users/nmm/.m2/repository/org/sat4j/org.sat4j.pb/2.3.1/org.sat4j.pb-2.3.1.jar"/>
+	<classpathentry kind="lib" path="/org.alloytools.pardinus.native/target/org.alloytools.pardinus.native.jar" sourcepath="/org.alloytools.pardinus.native/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17"/>
+	<classpathentry kind="src" output="target/classes" path="src/main/java"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
