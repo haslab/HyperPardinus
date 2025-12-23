@@ -144,7 +144,7 @@ public class NativeCode {
 
 			for (File dir : PATH) {
 				File file = new File(dir, genericName);
-				if (file.canExecute())
+				if (file.isFile() && file.canExecute())
 					return Optional.of(file);
 			}
 
@@ -152,6 +152,7 @@ public class NativeCode {
 			if (!file.canExecute()) {
 				if (!extract(exe, file))
 					return Optional.empty();
+				
 				file.setExecutable(true);
 			}
 			return Optional.of(file);
@@ -226,6 +227,7 @@ public class NativeCode {
 	static Map<String, File> cached = new HashMap<>();
 
 	public static Platform LINUX_X86_64 = new Platform("linux/amd64", "linux", "amd64", s -> "lib" + s + ".so", s -> s);
+	public static Platform LINUX_ARM64 = new Platform("linux/arm64", "linux", "aarch64", s -> "lib" + s + ".so", s -> s);
 	public static Platform DARWIN_ARM64 = new Platform("darwin/arm64", "mac\\s*os.*", "aarch64",
 			s -> "lib" + s + ".dylib", s -> s);
 	public static Platform DARWIN_AMD64 = new Platform("darwin/amd64", "mac\\s*os.*", "ppc|power|powerpc.*|x86.*",
@@ -234,7 +236,7 @@ public class NativeCode {
 	public static Platform WINDOWS_AMD64 = new Platform("windows/amd64", "win.*", "x86.*|amd64", s -> s + ".dll",
 			s -> s + ".exe");
 
-	public static Platform[] platforms = { LINUX_X86_64, DARWIN_ARM64, DARWIN_AMD64, WINDOWS_AMD64 };
+	public static Platform[] platforms = { LINUX_X86_64, LINUX_ARM64, DARWIN_ARM64, DARWIN_AMD64, WINDOWS_AMD64 };
 
 	public static Platform platform = findPlatform();
 
